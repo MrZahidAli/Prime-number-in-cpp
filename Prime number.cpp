@@ -2,8 +2,11 @@
 using namespace std;
 int main(){
 	cout << "Enter Number to Check: ";
-	int number;
-	cin >> number;
+	int limit;
+	cin >> limit;
+
+/*	 Method 1
+
 	if(number == 0){
 		cout << "Number is not Prime";
 		goto out;
@@ -14,4 +17,23 @@ int main(){
 		cout << "Number is not Prime";
 	}
 out:	return 0;
+*/
+
+//Method 2
+bool g = false;
+	for(int number = 2; number <= limit; number++){
+		for(int factor = 2; factor < number; factor++){
+			if(number % factor == 0){
+				g =  false;
+				break;
+			}else{
+				g = true;
+				break;
+			}
+		}
+		if(g){
+			cout << number;
+		}
+	}
+	return 0;
 }
